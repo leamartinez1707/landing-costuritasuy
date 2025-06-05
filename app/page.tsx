@@ -4,92 +4,101 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+      {/* Hero Section */}
+      <section className={styles.hero}>
+        <img
+          src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
+          alt="Modista trabajando"
+          className={styles.heroImage}
         />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
+        <div className={styles.heroText}>
+          <h1>Modista a Medida</h1>
+          <p>
+            Ropa personalizada, arreglos y confección con pasión y experiencia.<br />
+            ¡Haz realidad la prenda de tus sueños!
+          </p>
           <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contacto"
+            className={styles.ctaButton}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
+            Solicita tu prenda
           </a>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+      </section>
+
+      {/* Sobre mí */}
+      <section className={styles.sobreMi}>
+        <h2>Sobre mí</h2>
+        <p>
+          Soy modista profesional con más de 30 años de experiencia en corte, confección y arreglos de ropa. Mi pasión es crear prendas únicas y ayudar a que cada persona se sienta especial con lo que viste.
+        </p>
+      </section>
+
+      {/* Servicios */}
+      <section className={styles.servicios}>
+        <h2>Servicios</h2>
+        <ul>
+          <li>Confección de ropa a medida</li>
+          <li>Personalización de prendas (bordados, detalles únicos)</li>
+          <li>Arreglos y ajustes (cierres, dobladillos, entalles, etc.)</li>
+          <li>Trajes y vestidos para ocasiones especiales</li>
+        </ul>
+      </section>
+
+      {/* Galería */}
+      <section className={styles.galeria}>
+        <h2>Galería de trabajos</h2>
+        <div className={styles.galeriaGrid}>
+          <img src="https://images.unsplash.com/photo-1469398715555-76331a6c7df2?auto=format&fit=crop&w=400&q=80" alt="Vestido a medida" />
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" alt="Detalle de costura" />
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Arreglo de traje" />
+        </div>
+      </section>
+
+      {/* Testimonios */}
+      <section className={styles.testimonios}>
+        <h2>Testimonios</h2>
+        <div className={styles.testimoniosGrid}>
+          <blockquote>
+            "Excelente trabajo, mi vestido quedó perfecto y único. ¡Muy recomendable!"
+            <footer>- Ana G.</footer>
+          </blockquote>
+          <blockquote>
+            "Siempre confío mis arreglos y prendas especiales, la calidad es insuperable."
+            <footer>- Laura M.</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* Contacto */}
+      <section className={styles.contacto} id="contacto">
+        <h2>Contacto</h2>
+        <form
+          action="https://api.whatsapp.com/send"
+          method="get"
           target="_blank"
-          rel="noopener noreferrer"
+          className={styles.formulario}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <input type="hidden" name="phone" value="59895220063" />
+          <label>
+            Nombre
+            <input type="text" name="text" placeholder="Tu nombre" required />
+          </label>
+          <label>
+            Mensaje
+            <textarea name="text" placeholder="¿En qué puedo ayudarte?" required />
+          </label>
+          <button type="submit" className={styles.ctaButton}>
+            Enviar mensaje por WhatsApp
+          </button>
+        </form>
+        <div className={styles.redes}>
+          <a href="https://wa.me/59895220063" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width={32} height={32} />
+          </a>
+          {/* Puedes agregar más redes aquí */}
+        </div>
+      </section>
     </div>
   );
 }
