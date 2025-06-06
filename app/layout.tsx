@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Modista a Medida - Ropa personalizada y arreglos en tu ciudad",
-  description: "Confección, personalización y arreglos de ropa por una modista con años de experiencia. ¡Solicita tu prenda a medida hoy!",
+  title: "Modista a Medida",
+  description: "Ropa personalizada, arreglos y confección con pasión y experiencia",
 };
 
 export default function RootLayout({
@@ -24,8 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={inter.className}>
+        <Navbar />
+        <main style={{ paddingTop: '80px' }}>
+          {children}
+        </main>
       </body>
     </html>
   );

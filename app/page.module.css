@@ -1,5 +1,4 @@
 .page {
-  min-height: 100vh;
   width: 100%;
   background: #fff8f0;
   display: flex;
@@ -159,7 +158,7 @@ a.secondary {
   text-align: center;
   padding: 40px 20px;
   background: linear-gradient(rgba(255, 248, 240, 0.9), rgba(255, 248, 240, 0.9)),
-              url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80');
+    url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -171,7 +170,7 @@ a.secondary {
   object-fit: cover;
   border-radius: 50%;
   border: 8px solid #f8cfcf;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
   margin-bottom: 32px;
 }
 
@@ -184,7 +183,7 @@ a.secondary {
   font-size: 3.5rem;
   color: #b85c38;
   margin-bottom: 16px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .heroText p {
@@ -206,26 +205,34 @@ a.secondary {
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 4px 12px rgba(184,92,56,0.2);
+  box-shadow: 0 4px 12px rgba(184, 92, 56, 0.2);
 }
 
 .ctaButton:hover {
   background: #a14a2b;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(184,92,56,0.3);
+  box-shadow: 0 6px 16px rgba(184, 92, 56, 0.3);
 }
 
-.sobreMi, .servicios, .galeria, .testimonios, .contacto {
+.sobreMi,
+.servicios,
+.galeria,
+.testimonios,
+.contacto {
   width: 100%;
   max-width: 1200px;
   margin: 60px auto;
   padding: 40px;
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.sobreMi h2, .servicios h2, .galeria h2, .testimonios h2, .contacto h2 {
+.sobreMi h2,
+.servicios h2,
+.galeria h2,
+.testimonios h2,
+.contacto h2 {
   color: #b85c38;
   margin-bottom: 24px;
   font-size: 2.5rem;
@@ -234,7 +241,11 @@ a.secondary {
   padding-bottom: 16px;
 }
 
-.sobreMi h2::after, .servicios h2::after, .galeria h2::after, .testimonios h2::after, .contacto h2::after {
+.sobreMi h2::after,
+.servicios h2::after,
+.galeria h2::after,
+.testimonios h2::after,
+.contacto h2::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -255,27 +266,118 @@ a.secondary {
   margin: 0 auto;
 }
 
-.servicios ul {
-  list-style: none;
-  color: #6d4c41;
-  font-size: 1.2rem;
+.serviciosGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-  padding: 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin: 40px 0;
 }
 
-.servicios li {
+.servicioCard {
   background: #fff1e6;
-  padding: 20px;
+  color: #6d4c41;
   border-radius: 16px;
+  padding: 32px 24px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border: 2px solid #f8cfcf;
+  position: relative;
+  overflow: hidden;
+}
+
+.servicioCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #b85c38;
+  transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 
-.servicios li:hover {
-  transform: translateY(-4px);
+.servicioCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(184, 92, 56, 0.12);
+  background: #fff;
+}
+
+.servicioCard:hover::before {
+  transform: scaleX(1);
+}
+
+.servicioIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b85c38;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(184, 92, 56, 0.1);
+}
+
+.servicioTitle {
+  color: #b85c38;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.servicioDescription {
+  color: #6d4c41;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.gallerySection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.galleryHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.galleryHeader h2 {
+  color: #b85c38;
+  margin-bottom: 24px;
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.galleryHeader h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #f8cfcf;
+  border-radius: 2px;
+}
+
+.galleryHeader p {
+  color: #6d4c41;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .galeriaGrid {
@@ -290,7 +392,7 @@ a.secondary {
   height: 320px;
   object-fit: cover;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -313,17 +415,13 @@ a.secondary {
   color: #6d4c41;
   font-style: italic;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .testimoniosGrid blockquote footer {
   margin-top: 16px;
   font-weight: bold;
   color: #b85c38;
-}
-
-.contacto {
-  text-align: center;
 }
 
 .formulario {
@@ -343,7 +441,8 @@ a.secondary {
   font-weight: 500;
 }
 
-.formulario input, .formulario textarea {
+.formulario input,
+.formulario textarea {
   padding: 16px;
   border: 2px solid #f8cfcf;
   border-radius: 12px;
@@ -351,7 +450,8 @@ a.secondary {
   transition: border-color 0.3s ease;
 }
 
-.formulario input:focus, .formulario textarea:focus {
+.formulario input:focus,
+.formulario textarea:focus {
   outline: none;
   border-color: #b85c38;
 }
@@ -383,26 +483,35 @@ a.secondary {
   .heroText h1 {
     font-size: 2.5rem;
   }
-  
+
   .heroText p {
     font-size: 1.2rem;
   }
-  
-  .sobreMi, .servicios, .galeria, .testimonios, .contacto {
+
+  .sobreMi,
+  .servicios,
+  .galeria,
+  .testimonios,
+  .contacto {
     padding: 30px 20px;
     margin: 40px 20px;
   }
-  
+
   .galeriaGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .testimoniosGrid {
     grid-template-columns: 1fr;
   }
-  
-  .servicios ul {
+
+  .serviciosGrid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .servicioCard {
+    padding: 24px 20px;
   }
 }
 
@@ -410,13 +519,35 @@ a.secondary {
   .heroText h1 {
     font-size: 2rem;
   }
-  
+
   .heroImage {
     width: 220px;
     height: 220px;
   }
-  
+
   .ctaButton {
+    padding: 12px 32px;
+    font-size: 1.1rem;
+  }
+
+  .servicios {
+    margin: 30px 16px;
+    padding: 24px 16px;
+  }
+
+  .servicios h2 {
+    font-size: 1.8rem;
+  }
+
+  .servicioTitle {
+    font-size: 1.2rem;
+  }
+
+  .servicioDescription {
+    font-size: 1rem;
+  }
+
+  .servicios .ctaButton {
     padding: 12px 32px;
     font-size: 1.1rem;
   }
